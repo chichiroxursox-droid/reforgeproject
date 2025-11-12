@@ -7,12 +7,12 @@ const MeetTheTeam = () => {
     {
       name: "Ryan Green",
       role: "Senior at SLA Beeber",
-      bio: "I enjoy playing video games and wearing overpriced designer.",
+      bio: "Aspiring Pre-med student who is making up for the mistakes that he made in high school. I can play violin. I would also like to major in Biological Sciences. ",
     },
     {
       name: "Ethan Hauger",
       role: "Senior at SLA Beeber",
-      bio: "I enjoy playing basketball, reading, and playing piano. I'm interested in working with AI after high school. I've been a part of this group since 9th grade, and I hope we can accomplish lasting change this year that people will rememeber, setting a precedent for the future.",
+      bio: "I enjoy playing basketball, reading, and playing piano. I'm interested in working with AI after high school.",
     },
     {
       name: "Jamil Murphy",
