@@ -2,10 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-
 const Testimonies = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-1">
@@ -48,7 +46,7 @@ const Testimonies = () => {
                 
                 <div className="space-y-6 text-foreground/90 leading-relaxed">
                   <p className="text-lg">
-                    "My cousin was sprayed down with bullets and killed. What hurt the most was that he was genuinely a good person. He had kids. He was getting his life together, on a good path. And then he was gone."
+                    "My cousin was shot multiple times and killed. What hurt the most was that he was genuinely a good person. He had kids. He was getting his life together, on a good path. And then he was gone."
                   </p>
                 </div>
               </Card>
@@ -100,8 +98,6 @@ const Testimonies = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Testimonies;
