@@ -53,7 +53,7 @@ const WhoWeAre = () => {
             </div>
 
             <div className="my-16">
-              <img src={studentsCollaboration} alt="Students collaborating on creative projects" className="w-full rounded-lg shadow-lg" />
+              
             </div>
 
             <div className="my-16">
