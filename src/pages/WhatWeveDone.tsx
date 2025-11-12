@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import transformation from "@/assets/transformation.jpg";
+import microphonePeace from "@/assets/microphone-peace.jpg";
+import microphoneEvent from "@/assets/microphone-event.jpg";
 
 const WhatWeveDone = () => {
   const achievements = [
@@ -38,6 +40,29 @@ const WhatWeveDone = () => {
               <p className="mb-8">
                 Through our partnership with Humanium Metal, we created the <strong>Microphone for Peace</strong>—a working microphone built from melted-down illegal firearms. This mic has been used by activists across Philadelphia and beyond to amplify stories of resilience and community healing.
               </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <img 
+                  src={microphonePeace} 
+                  alt="Microphone for Peace built from melted firearms" 
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-center mt-4 text-foreground/70 italic">
+                  The Microphone for Peace
+                </p>
+              </div>
+              <div>
+                <img 
+                  src={microphoneEvent} 
+                  alt="Community event featuring the Microphone for Peace" 
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-center mt-4 text-foreground/70 italic">
+                  Amplifying voices for change at community events
+                </p>
+              </div>
             </div>
 
             <Card className="p-8 bg-gradient-to-br from-turquoise/5 to-turquoise/10 border-2 border-turquoise/20">

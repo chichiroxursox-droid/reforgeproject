@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import phillyHero from "@/assets/philly-hero.jpg";
 import studentsCollaboration from "@/assets/students-collaboration.jpg";
+import gunTransformation from "@/assets/gun-transformation.jpg";
 const WhoWeAre = () => {
   const statistics = [{
     number: "400+",
@@ -53,6 +54,13 @@ const WhoWeAre = () => {
 
             <div className="my-16">
               <img src={studentsCollaboration} alt="Students collaborating on creative projects" className="w-full rounded-lg shadow-lg" />
+            </div>
+
+            <div className="my-16">
+              <img src={gunTransformation} alt="Transforming weapons into tools for peace" className="w-full rounded-lg shadow-lg" />
+              <p className="text-center mt-4 text-foreground/70 italic">
+                Melting down firearms to create tools for growth and peace
+              </p>
             </div>
 
             <div className="mb-12">
