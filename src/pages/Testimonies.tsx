@@ -62,7 +62,7 @@ const Testimonies = () => {
                 
                 <div className="space-y-6 text-foreground/90 leading-relaxed">
                   <p className="text-lg">
-                    "I knew a man in the city who gave out dogs to people in the neighborhood. One day when I was a kid, I heard a gunshot outside. My dad was out there walking our dog. He saw the man—the one who gave out the dogs—bleeding on the ground. My dad rushed him to the ER, but he didn't make it. I'll never forget that."
+                    "When I was younger, I knew a man in the city who gave out dogs to people in the neighborhood. He gave our family one. One night, I heard a gunshot outside. My dad was out there walking our dog. He saw the man—the one who gave out the dogs—bleeding on the ground. My dad rushed him to the ER, but he didn't make it. I'll never forget that."
                   </p>
                 </div>
               </Card>
