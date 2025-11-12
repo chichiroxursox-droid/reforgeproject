@@ -78,7 +78,7 @@ const Testimonies = () => {
                 
                 <div className="space-y-6 text-foreground/90 leading-relaxed">
                   <p className="text-lg">
-                    "When I was in 9th grade, my good friend Zion and I were walking down my block when somebody started shooting nearby. He was shot and killed. Because we were close to where it happened, we got detained in a cop car. One of the officers searched us to make sure we didn't have a gun.
+                    "When I was in 9th grade, my good friend Zion and I were walking down my block when somebody started shooting nearby. I believe whoever got shot at was killed. Because we were close to the crime scene, we got detained in a cop car. One of the officers searched us extensively and started questioning us to make sure we didn't have a gun and that we weren't invovled.                  
                   </p>
                   
                   <p className="text-lg">
