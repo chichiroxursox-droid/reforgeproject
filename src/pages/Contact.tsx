@@ -2,10 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-1">
@@ -23,26 +21,12 @@ const Contact = () => {
                   <Mail className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Email Us</h3>
-                <a 
-                  href="mailto:thereforgeprojectsla@gmail.com"
-                  className="text-primary hover:underline"
-                >
+                <a href="mailto:thereforgeprojectsla@gmail.com" className="text-primary hover:underline">
                   thereforgeprojectsla@gmail.com
                 </a>
               </Card>
 
-              <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 border-2 hover:border-primary">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">Call Us</h3>
-                <a 
-                  href="tel:267-235-3890"
-                  className="text-primary hover:underline"
-                >
-                  267-235-3890
-                </a>
-              </Card>
+              
             </div>
 
             <Card className="p-8 bg-gradient-to-br from-turquoise/5 to-turquoise/10 border-2 border-turquoise/20">
@@ -55,8 +39,6 @@ const Contact = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
