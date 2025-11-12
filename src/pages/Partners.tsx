@@ -9,7 +9,7 @@ const Partners = () => {
     {
       name: "Humanium Metal",
       description: "Humanium Metal is an innovative material created by melting down illegal firearms, transforming them into non-lethal commodities that promote peace. This metal is produced primarily from weapons seized in conflict zones, contributing to efforts to reduce gun violence and enhance safety in communities. Known for its strength and durability, Humanium Metal is used in a range of products, including jewelry and accessories, helping raise awareness of the impact of armed violence. The initiative operates on a circular business model, where profits from Humanium Metal products are reinvested into communities affected by violence, supporting rebuilding and social justice efforts. Overall, Humanium Metal serves as a powerful symbol of transformation, turning instruments of harm into tools for peace and community resilience.",
-      website: "https://www.humanium.com/",
+      website: "https://humanium-metal.com/",
     },
     {
       name: "RAWtools Philadelphia",
