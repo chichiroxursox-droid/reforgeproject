@@ -58,9 +58,7 @@ const WhoWeAre = () => {
 
             <div className="my-16">
               
-              <p className="text-center mt-4 text-foreground/70 italic">
-                Melting down firearms to create tools for growth and peace
-              </p>
+              
             </div>
 
             <div className="mb-12">
