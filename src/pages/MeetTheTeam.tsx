@@ -19,6 +19,11 @@ const MeetTheTeam = () => {
       role: "Senior at SLA",
       bio: "An aspiring lawyer who is involved in YAG (Youth Government).",
     },
+    {
+      name: "Zion Williams",
+      role: "Senior at SLA",
+      bio: "A varsity basketball player who enjoys video games and anime, and also wears overpriced clothes.",
+    },
   ];
 
   return (
