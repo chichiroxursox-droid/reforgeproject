@@ -57,7 +57,7 @@ const WhoWeAre = () => {
             </div>
 
             <div className="my-16">
-              <img src={gunTransformation} alt="Transforming weapons into tools for peace" className="w-full rounded-lg shadow-lg" />
+              
               <p className="text-center mt-4 text-foreground/70 italic">
                 Melting down firearms to create tools for growth and peace
               </p>
