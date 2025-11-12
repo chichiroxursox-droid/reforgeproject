@@ -16,25 +16,59 @@ const Testimonies = () => {
               Gun violence isn't just an abstract issue—it's something that touches real lives.
             </p>
             
-            <Card className="p-8 md:p-12 border-2 border-primary/20 bg-gradient-to-br from-background to-turquoise/5">
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Quote className="w-8 h-8 text-primary" />
+            <div className="space-y-8">
+              <Card className="p-8 md:p-12 border-2 border-primary/20 bg-gradient-to-br from-background to-turquoise/5">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Quote className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
-              </div>
-              
-              <h2 className="text-2xl font-bold text-center mb-8 text-primary">Ryan's Story</h2>
-              
-              <div className="space-y-6 text-foreground/90 leading-relaxed">
-                <p className="text-lg">
-                  "My connection to gun violence is that my brother was killed in a drive-by shooting, and ever since then, it has been hard to shake back from it. It was like I lost a part of myself—my right-hand person in life. I never thought something so drastic would happen to someone so young. I've never felt something so heartbreaking until that happened.
-                </p>
                 
-                <p className="text-lg">
-                  Another time I can account for is a day when I was skipping school back in 10th grade. I witnessed a shooting right in front of me—a homeless man shot in the chest for no reason, or maybe it was a reason, but I don't know. I tried to help him as best I could, but there was nothing else I could do but call 911 and hope he lived. I still don't know if he made it, but my prayers go out to him. Seeing that changed my perspective on life."
-                </p>
-              </div>
-            </Card>
+                <h2 className="text-2xl font-bold text-center mb-8 text-primary">Ryan's Story</h2>
+                
+                <div className="space-y-6 text-foreground/90 leading-relaxed">
+                  <p className="text-lg">
+                    "My brother was killed in a drive-by shooting. Ever since then, it's been hard to bounce back. It felt like I lost a part of myself—my right-hand person in life. I never imagined something so tragic could happen to someone so young. I've never felt heartbreak like that before.
+                  </p>
+                  
+                  <p className="text-lg">
+                    In 10th grade, I witnessed another shooting—a homeless man shot in the chest, right in front of me. I tried to help him the best I could, but all I could do was call 911 and pray he survived. I still don't know if he made it. That moment changed how I see life."
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="p-8 md:p-12 border-2 border-primary/20 bg-gradient-to-br from-background to-turquoise/5">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Quote className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <h2 className="text-2xl font-bold text-center mb-8 text-primary">Dayciana's Story</h2>
+                
+                <div className="space-y-6 text-foreground/90 leading-relaxed">
+                  <p className="text-lg">
+                    "My cousin was sprayed down with bullets and killed. What hurt the most was that he was genuinely a good person. He had kids. He was getting his life together, on a good path. And then he was gone."
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="p-8 md:p-12 border-2 border-primary/20 bg-gradient-to-br from-background to-turquoise/5">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Quote className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <h2 className="text-2xl font-bold text-center mb-8 text-primary">Phillip's Story</h2>
+                
+                <div className="space-y-6 text-foreground/90 leading-relaxed">
+                  <p className="text-lg">
+                    "I knew a man in the city who gave out dogs to people in the neighborhood. One day when I was a kid, I heard a gunshot outside. My dad was out there walking our dog. He saw the man—the one who gave out the dogs—bleeding on the ground. My dad rushed him to the ER, but he didn't make it. I'll never forget that."
+                  </p>
+                </div>
+              </Card>
+            </div>
 
             <div className="mt-12 text-center p-8 bg-secondary/50 rounded-lg">
               <p className="text-lg text-foreground/80 italic">
