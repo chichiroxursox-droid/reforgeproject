@@ -11,17 +11,17 @@ const MeetTheTeam = () => {
     },
     {
       name: "Ethan Hauger",
-      role: "Senior at SLA",
-      bio: "A varsity basketball player who plays video games with Ryan, and also likes to read books and play the piano.",
+      role: "Senior at SLA Beeber",
+      bio: "I enjoy playing basketball, reading, and playing piano. I'm interested in working with AI after high school.",
     },
     {
       name: "Jamil Murphy",
-      role: "Senior at SLA",
+      role: "Senior at SLA Beeber",
       bio: "An aspiring lawyer who is involved in YAG (Youth Government).",
     },
     {
       name: "Zion Williams",
-      role: "Senior at SLA",
+      role: "Senior at SLA Beeber",
       bio: "A varsity basketball player who enjoys video games and anime, and also wears overpriced clothes.",
     },
   ];
@@ -29,14 +29,12 @@ const MeetTheTeam = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/10 to-background">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Meet the Team
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Meet the Team</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The student leaders behind The Reforge Project, working together to transform violence into peace.
             </p>
