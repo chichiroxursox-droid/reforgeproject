@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
-import transformation from "@/assets/transformation.jpg";
+import forgedSteel from "@/assets/forged-steel.jpg";
 import microphonePeace from "@/assets/microphone-peace.jpg";
 import microphoneEvent from "@/assets/microphone-event.jpg";
 
@@ -25,8 +25,8 @@ const WhatWeveDone = () => {
             
             <div className="mb-12">
               <img 
-                src={transformation} 
-                alt="Transformation from violence to peace" 
+                src={forgedSteel} 
+                alt="Fresh forged steel workpieces symbolizing transformation" 
                 className="w-full rounded-lg shadow-lg mb-8"
               />
             </div>
