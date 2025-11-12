@@ -6,7 +6,7 @@ const MeetTheTeam = () => {
     {
       name: "Ryan Green",
       role: "Senior at SLA Beeber",
-      bio: "Aspiring Pre-med student who is a victim of Gun violence, which I experienced in high school. I can play violin. I would also like to major in Biological Sciences. I joined the reforge project to advocate for Gun violence and help those who have experienced what I have in the world. I have helped people at a homeless shelter through my internship at the Achievement Academy, a partner of the Kappa League. I also made a podcast about Animal Safety called Compassion is Resistance.",
+      bio: "Aspiring Pre-med student who is a victim of Gun violence, which I experienced in high school. Ryan can play violin. Ryam would also like to major in Biological Sciences. I joined the reforge project to advocate for Gun violence and help those who have experienced what I have in the world. Ryan has helped people at a homeless shelter through my internship at the Achievement Academy, a partner of the Kappa League. Ryan also made a podcast about Animal Safety called Compassion is Resistance.",
     },
     {
       name: "Ethan Hauger",
