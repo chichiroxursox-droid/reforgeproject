@@ -7,7 +7,7 @@ const MeetTheTeam = () => {
     {
       name: "Ryan Green",
       role: "Senior at SLA Beeber",
-      bio: "Aspiring Pre-med student who is making up for the mistakes that he made in high school. I can play violin. I would also like to major in Biological Sciences. ",
+      bio: "Aspiring Pre-med student who is a victim of Gun violence and who has seen it first hand, which I experienced in high school. I can play violin. I would also like to major in Biological Sciences. ",
     },
     {
       name: "Ethan Hauger",
