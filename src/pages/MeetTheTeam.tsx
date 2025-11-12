@@ -17,7 +17,7 @@ const MeetTheTeam = () => {
   }, {
     name: "Zion Williams",
     role: "Senior at SLA Beeber",
-    bio: "A varsity basketball player who enjoys video games and anime, and also wears overpriced clothes."
+    bio: "I am a dedicated senior at Science Leadership Academy @ Beeber, set to graduate in June 2026, with a strong passion for engineering, construction, and design. Over the past three summers, I’ve worked with Fox Chase Farm, where I helped build three reservoirs to manage stormwater runoff and contributed to numerous construction projects, including roofing, flooring, and building shelters for animals. My experiences have given me hands-on skills in carpentry, environmental engineering, and sustainable design practices. Through my Career Technical Education concentration in Engineering & Construction, I’ve learned how to build structures from the ground up and understand the importance of teamwork, safety, and precision. I also expanded my creativity as a graphic design intern at Space 1026, mastering tools like Adobe Photoshop, Illustrator, and InDesign to create visual designs for events and social media. Balancing both technical and creative fields has helped me develop a unique perspective on problem-solving and innovation. I take pride in my ability to adapt quickly, learn from every experience, and apply my skills to real-world challenges. My ultimate goal is to combine my engineering knowledge and artistic creativity to design solutions that make the world more sustainable and visually inspiring.."
   }];
   return <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
