@@ -7,21 +7,21 @@ const MeetTheTeam = () => {
     {
       name: "Ryan Green",
       role: "Senior at SLA Beeber",
-      bio: "I enjoy playing video games and wearing overpriced designer.",
+      bio: "Aspiring pre-med student had a rough patch in highschool but Im making up for it. I can play the violin. I also want to major in Biological Sciences. ",
     },
     {
       name: "Ethan Hauger",
-      role: "Senior at SLA Beeber",
-      bio: "I enjoy playing basketball, reading, and playing piano. I'm interested in working with AI after high school.",
+      role: "Senior at SLA",
+      bio: "A varsity basketball player who plays video games with Ryan, and also likes to read books and play the piano.",
     },
     {
       name: "Jamil Murphy",
-      role: "Senior at SLA Beeber",
-      bio: "An aspiring lawyer involved in YAG (Youth Government) who advocates passionately for justice and isn't afraid to speak up when change is needed. As a victim of gun violence and dedicated member of youth civic engagement, Jamil joined The Reforge Peace Project because he believes change comes through voice and action—and there's no better way to create that change than through Humanium, healing the very streets we walk on as a community.",
+      role: "Senior at SLA",
+      bio: "An aspiring lawyer who is involved in YAG (Youth Government).",
     },
     {
       name: "Zion Williams",
-      role: "Senior at SLA Beeber",
+      role: "Senior at SLA",
       bio: "A varsity basketball player who enjoys video games and anime, and also wears overpriced clothes.",
     },
   ];
