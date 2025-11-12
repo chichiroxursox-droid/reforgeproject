@@ -15,7 +15,7 @@ const Contact = () => {
               Reach out — we'd love to hear from you.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="flex justify-center mb-12">
               <Card className="p-8 text-center hover:shadow-lg transition-all duration-300 border-2 hover:border-primary">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-8 h-8 text-primary" />
