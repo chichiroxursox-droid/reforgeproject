@@ -42,7 +42,7 @@ const WhoWeAre = () => {
       <main className="flex-1">
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">Who We Are</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Who We Are</h2>
             
             <div className="prose prose-lg max-w-none mb-12 text-foreground/90 leading-relaxed space-y-6">
               <p>
@@ -64,7 +64,7 @@ const WhoWeAre = () => {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">Gun Violence in Philadelphia – By the Numbers</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Gun Violence in Philadelphia – By the Numbers</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {statistics.map((stat, index) => <Card key={index} className="p-6 text-center border-2 hover:border-primary transition-all duration-300 hover:shadow-lg">

@@ -26,8 +26,8 @@ const MeetTheTeam = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/10 to-background">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000">Meet the Team</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Meet the Team</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The student leaders behind The Reforge Project, working together to transform violence into peace.
             </p>
           </div>
