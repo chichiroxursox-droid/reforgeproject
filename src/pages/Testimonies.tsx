@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Quote, TrendingUp, Users, AlertTriangle, Heart } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const Testimonies = () => {
   return (
@@ -68,55 +68,6 @@ const Testimonies = () => {
                   </p>
                 </div>
               </Card>
-            </div>
-
-            <div className="mt-16 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">The Reality in Numbers</h2>
-              <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
-                These stories represent a larger crisis affecting Philadelphia communities
-              </p>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <AlertTriangle className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-foreground/70">Gun violence victims annually in Philadelphia</div>
-                </Card>
-
-                <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold text-primary mb-2">1,400+</div>
-                  <div className="text-sm text-foreground/70">Shootings reported each year</div>
-                </Card>
-
-                <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold text-primary mb-2">40%</div>
-                  <div className="text-sm text-foreground/70">Of victims are under 25 years old</div>
-                </Card>
-
-                <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Heart className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold text-primary mb-2">1000s</div>
-                  <div className="text-sm text-foreground/70">Of families forever changed by gun violence</div>
-                </Card>
-              </div>
             </div>
 
             <div className="mt-12 text-center p-8 bg-secondary/50 rounded-lg">
