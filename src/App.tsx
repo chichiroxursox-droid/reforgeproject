@@ -9,6 +9,7 @@ import WhatsNext from "./pages/WhatsNext";
 import Partners from "./pages/Partners";
 import Testimonies from "./pages/Testimonies";
 import Contact from "./pages/Contact";
+import MeetTheTeam from "./pages/MeetTheTeam";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/whats-next" element={<WhatsNext />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/testimonies" element={<Testimonies />} />
+          <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
