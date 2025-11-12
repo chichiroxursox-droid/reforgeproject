@@ -24,10 +24,10 @@ const Contact = () => {
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Email Us</h3>
                 <a 
-                  href="mailto:ehauger26@slabeeber.org"
+                  href="mailto:thereforgeprojectsla@gmail.com"
                   className="text-primary hover:underline"
                 >
-                  ehauger26@slabeeber.org
+                  thereforgeprojectsla@gmail.com
                 </a>
               </Card>
 
