@@ -68,6 +68,26 @@ const Testimonies = () => {
                   </p>
                 </div>
               </Card>
+
+              <Card className="p-8 md:p-12 border-2 border-primary/20 bg-gradient-to-br from-background to-turquoise/5">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Quote className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <h2 className="text-2xl font-bold text-center mb-8 text-primary">Jamil's Story</h2>
+                
+                <div className="space-y-6 text-foreground/90 leading-relaxed">
+                  <p className="text-lg">
+                    "When I was in 9th grade, my good friend Zion and I were walking down my block when somebody started shooting nearby. He was shot and killed. Because we were close to where it happened, we got detained in a cop car. One of the officers searched us to make sure we didn't have a gun.
+                  </p>
+                  
+                  <p className="text-lg">
+                    It was a really scary and traumatizing experience. I don't think it's fair I have to go through these things."
+                  </p>
+                </div>
+              </Card>
             </div>
 
             <div className="mt-12 text-center p-8 bg-secondary/50 rounded-lg">
