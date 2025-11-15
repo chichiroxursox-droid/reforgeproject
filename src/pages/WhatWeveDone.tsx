@@ -9,6 +9,7 @@ import microphoneEvent from "@/assets/microphone-event.jpg";
 const WhatWeveDone = () => {
   const achievements = [
     "Built one Microphone for Peace, which has traveled between schools and community events to share messages of hope.",
+    "Sent two students to present at the United Nations on anti-gun violence.",
     "Met with city leaders and activists—including Shane Claiborne of RAWtools Philadelphia—to discuss how students can be part of long-term change.",
     "Collected data and stories from students across Philadelphia about how gun violence affects their daily lives.",
     "Partnered with organizations committed to transforming weapons into something meaningful and restorative.",
