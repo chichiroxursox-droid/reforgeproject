@@ -11,7 +11,7 @@ const MeetTheTeam = () => {
     {
       name: "Ethan Hauger",
       role: "Senior at SLA Beeber",
-      bio: "I enjoy playing basketball, reading, and playing piano. I'm interested in working with AI after high school.",
+      bio: "I'm a senior at SLA Beeber who loves basketball, piano, and finding ways to grow. I care about helping others, learning new things, and making a positive impact. I was one of the presenters at the United Nations about gun violence, and I'm especially interested in exploring artificial intelligence in the future.",
     },
     {
       name: "Jamil Murphy",
