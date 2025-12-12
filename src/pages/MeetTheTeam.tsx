@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import teamPhoto from "@/assets/team-photo.jpeg";
 const MeetTheTeam = () => {
   const teamMembers = [
     {
@@ -36,6 +37,17 @@ const MeetTheTeam = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The student leaders behind The Reforge Project, working together to transform violence into peace.
             </p>
+          </div>
+        </section>
+
+        {/* Team Photo Section */}
+        <section className="py-12 px-4">
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={teamPhoto} 
+              alt="The Reforge Project team members" 
+              className="w-full rounded-lg shadow-lg"
+            />
           </div>
         </section>
 
