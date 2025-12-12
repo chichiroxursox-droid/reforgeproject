@@ -17,7 +17,7 @@ const MeetTheTeam = () => {
     {
       name: "Jamil Murphy",
       role: "Senior at SLA Beeber",
-      bio: "I'm an aspiring lawyer involved in YAG (Youth Government) who advocates passionately for justice and isn't afraid to speak up when change is needed. As a victim of gun violence and dedicated member of youth civic engagement, I joined The Reforge Peace Project because I believe change comes through voice and action—and there's no better way to create that change than through Humanium, healing the very streets we walk on as a community.",
+      bio: "I'm an aspiring lawyer involved in YAG (Youth Government) who advocates passionately for justice and isn't afraid to speak up when change is needed. As a victim of gun violence and dedicated member of youth civic engagement, I joined The Reforge Project because I believe change comes through voice and action, and there's no better way to create that change than through Humanium, healing the very streets we walk on as a community.",
     },
     {
       name: "Zion Williams",
