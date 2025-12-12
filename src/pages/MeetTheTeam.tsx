@@ -7,7 +7,7 @@ const MeetTheTeam = () => {
     {
       name: "Ryan Green",
       role: "Senior at SLA Beeber",
-      bio: "Aspiring Pre-med student who is a victim of Gun violence, which I experienced in high school. Ryan can play violin. Ryan would also like to major in Biological Sciences. I joined the reforge project to advocate for Gun violence and help those who have experienced what I have in the world. Ryan has helped people at a homeless shelter through my internship at the Achievement Academy, a partner of the Kappa League. Ryan also made a podcast about Animal Safety called Compassion is Resistance.",
+      bio: "I'm an aspiring Pre-med student and a victim of gun violence, which I experienced in high school. I can play violin and would like to major in Biological Sciences. I joined The Reforge Project to advocate against gun violence and help those who have experienced what I have. I've helped people at a homeless shelter through my internship at the Achievement Academy, a partner of the Kappa League. I also made a podcast about Animal Safety called Compassion is Resistance.",
     },
     {
       name: "Ethan Hauger",
@@ -17,7 +17,7 @@ const MeetTheTeam = () => {
     {
       name: "Jamil Murphy",
       role: "Senior at SLA Beeber",
-      bio: "An aspiring lawyer involved in YAG (Youth Government) who advocates passionately for justice and isn't afraid to speak up when change is needed. As a victim of gun violence and dedicated member of youth civic engagement, Jamil joined The Reforge Peace Project because he believes change comes through voice and action—and there's no better way to create that change than through Humanium, healing the very streets we walk on as a community.",
+      bio: "I'm an aspiring lawyer involved in YAG (Youth Government) who advocates passionately for justice and isn't afraid to speak up when change is needed. As a victim of gun violence and dedicated member of youth civic engagement, I joined The Reforge Peace Project because I believe change comes through voice and action—and there's no better way to create that change than through Humanium, healing the very streets we walk on as a community.",
     },
     {
       name: "Zion Williams",
