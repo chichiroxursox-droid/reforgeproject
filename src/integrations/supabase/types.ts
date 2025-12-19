@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      competition_submissions: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          email: string
+          file_name: string | null
+          file_url: string | null
+          grade: string
+          id: string
+          name: string
+          school: string
+          statement: string
+          title: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          email: string
+          file_name?: string | null
+          file_url?: string | null
+          grade: string
+          id?: string
+          name: string
+          school: string
+          statement: string
+          title: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          email?: string
+          file_name?: string | null
+          file_url?: string | null
+          grade?: string
+          id?: string
+          name?: string
+          school?: string
+          statement?: string
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

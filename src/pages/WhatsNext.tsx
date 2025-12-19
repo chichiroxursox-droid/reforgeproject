@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Lightbulb, Video, Users, Palette, Wrench, Trophy, Award } from "lucide-react";
+import CompetitionSubmissionForm from "@/components/CompetitionSubmissionForm";
 
 const WhatsNext = () => {
   const upcomingPlans = [
@@ -80,10 +81,11 @@ const WhatsNext = () => {
               </p>
               
               <Tabs defaultValue="overview" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 mb-6">
+                <TabsList className="grid w-full grid-cols-4 mb-6">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="categories">Categories</TabsTrigger>
                   <TabsTrigger value="prizes">Prizes</TabsTrigger>
+                  <TabsTrigger value="submit">Submit Entry</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="space-y-4">
@@ -154,6 +156,10 @@ const WhatsNext = () => {
                       All finalists receive a certificate of recognition and Reforge Project swag.
                     </p>
                   </Card>
+                </TabsContent>
+                
+                <TabsContent value="submit" className="space-y-4">
+                  <CompetitionSubmissionForm />
                 </TabsContent>
               </Tabs>
             </div>
