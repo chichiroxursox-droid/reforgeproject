@@ -8,10 +8,13 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-interface ContactRequest {
+interface SubmissionRequest {
   name: string;
   email: string;
-  message: string;
+  school: string;
+  grade: string;
+  category: string;
+  title: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -20,39 +23,52 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, message }: ContactRequest = await req.json();
+    const { name, email, school, grade, category, title }: SubmissionRequest = await req.json();
 
-    console.log("Sending contact email from:", name, email);
+    console.log("Sending submission confirmation to:", name, email);
+
+    const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
+
+    // Send confirmation to the submitter
+    const confirmationResponse = await resend.emails.send({
+      from: "Reforge Project <onboarding@resend.dev>",
+      to: [email],
+      subject: "Competition Submission Received - Reforge Project",
+      html: `
+        <h1>Thank you for your submission, ${name}!</h1>
+        <p>We have received your entry for the <strong>Reforge Youth Design & Art Competition</strong>.</p>
+        <h3>Submission Details:</h3>
+        <ul>
+          <li><strong>Category:</strong> ${categoryName}</li>
+          <li><strong>Project Title:</strong> ${title}</li>
+          <li><strong>School:</strong> ${school}</li>
+          <li><strong>Grade:</strong> ${grade}</li>
+        </ul>
+        <p>We'll review your submission and notify you within two weeks if you've been selected as a finalist.</p>
+        <p>Best of luck!</p>
+        <p>— The Reforge Project Team</p>
+      `,
+    });
+
+    console.log("Confirmation email sent:", confirmationResponse);
 
     // Send notification to the organization
     const notificationResponse = await resend.emails.send({
       from: "Reforge Project <onboarding@resend.dev>",
       to: ["thereforgeprojectsla@gmail.com"],
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Competition Submission: ${title}`,
       html: `
-        <h2>New Contact Form Submission</h2>
+        <h2>New Competition Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p><strong>School:</strong> ${school}</p>
+        <p><strong>Grade:</strong> ${grade}</p>
+        <p><strong>Category:</strong> ${categoryName}</p>
+        <p><strong>Project Title:</strong> ${title}</p>
       `,
     });
 
     console.log("Notification email sent:", notificationResponse);
-
-    // Send confirmation to the sender
-    const confirmationResponse = await resend.emails.send({
-      from: "Reforge Project <onboarding@resend.dev>",
-      to: [email],
-      subject: "We received your message!",
-      html: `
-        <h1>Thank you for reaching out, ${name}!</h1>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <p>Best regards,<br>The Reforge Project Team</p>
-      `,
-    });
-
-    console.log("Confirmation email sent:", confirmationResponse);
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,

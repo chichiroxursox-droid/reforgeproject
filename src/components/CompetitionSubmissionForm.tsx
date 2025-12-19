@@ -89,10 +89,22 @@ const CompetitionSubmissionForm = () => {
         throw insertError;
       }
 
+      // Send confirmation email
+      await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          school: formData.school,
+          grade: formData.grade,
+          category: formData.category,
+          title: formData.title,
+        },
+      });
+
       setIsSubmitted(true);
       toast({
         title: "Submission received!",
-        description: "Thank you for your competition entry. We'll be in touch soon.",
+        description: "Thank you for your competition entry. Check your email for confirmation.",
       });
     } catch (error) {
       console.error("Submission error:", error);
