@@ -91,7 +91,7 @@ const WhatsNext = () => {
                 <TabsContent value="overview" className="space-y-4">
                   <Card className="p-6">
                     <p className="text-foreground/80 mb-4">
-                      In partnership with <strong>Humanium Metal Sweden</strong> and <strong>RAWtools Philly</strong>, we are launching two connected competitions—one focused on art and one on engineering design.
+                      In partnership with <strong>Humanium Metal Sweden</strong> and <strong>RAWtools Philly</strong>, we are launching two connected competitions: one focused on art and one on engineering design.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="p-4 bg-primary/5 rounded-lg">
@@ -166,7 +166,7 @@ const WhatsNext = () => {
 
             <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border-2 border-primary/20">
               <p className="text-xl font-medium text-foreground">
-                This is more than a project—it's a movement to make Philadelphia safer,{" "}
+                This is more than a project. It's a movement to make Philadelphia safer,{" "}
                 <span className="text-primary font-semibold">one step and one melted gun at a time.</span>
               </p>
             </div>

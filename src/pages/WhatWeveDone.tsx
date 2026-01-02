@@ -10,7 +10,7 @@ const WhatWeveDone = () => {
   const achievements = [
     "Built one Microphone for Peace, which has traveled between schools and community events to share messages of hope.",
     "Sent two students to present at the United Nations on anti-gun violence.",
-    "Met with city leaders and activists—including Shane Claiborne of RAWtools Philadelphia—to discuss how students can be part of long-term change.",
+    "Met with city leaders and activists, including Shane Claiborne of RAWtools Philadelphia, to discuss how students can be part of long-term change.",
     "Collected data and stories from students across Philadelphia about how gun violence affects their daily lives.",
     "Partnered with organizations committed to transforming weapons into something meaningful and restorative.",
   ];
@@ -39,7 +39,7 @@ const WhatWeveDone = () => {
               </p>
               
               <p className="mb-8">
-                Through our partnership with Humanium Metal, we created the <strong>Microphone for Peace</strong>—a working microphone built from melted-down illegal firearms. This mic has been used by activists across Philadelphia and beyond to amplify stories of resilience and community healing.
+                Through our partnership with Humanium Metal, we created the <strong>Microphone for Peace</strong>: a working microphone built from melted-down illegal firearms. This mic has been used by activists across Philadelphia and beyond to amplify stories of resilience and community healing.
               </p>
             </div>
 

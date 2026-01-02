@@ -76,7 +76,7 @@ const WhoWeAre = () => {
               </div>
 
               <p className="text-center mt-8 text-foreground/80 italic">
-                These aren't just numbers—they represent lives, families, and futures lost too soon. We're determined to help change that.
+                These aren't just numbers. They represent lives, families, and futures lost too soon. We're determined to help change that.
               </p>
             </div>
           </div>
