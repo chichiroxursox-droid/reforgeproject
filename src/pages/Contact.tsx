@@ -14,7 +14,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Get in Contact</h1>
             <p className="text-center text-lg text-foreground/80 mb-12">
               Want to connect, collaborate, or support our work?<br />
-              Reach out — we'd love to hear from you.
+              Reach out. We'd love to hear from you.
             </p>
             
             <div className="flex justify-center mb-12">

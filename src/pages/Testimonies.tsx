@@ -11,7 +11,7 @@ const Testimonies = () => {
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Voices of Change</h1>
             <p className="text-center text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">
-              Gun violence isn't just an abstract issue—it's something that touches real lives.
+              Gun violence isn't just an abstract issue. It's something that touches real lives.
             </p>
             
             <div className="space-y-8">
@@ -26,7 +26,7 @@ const Testimonies = () => {
                 
                 <div className="space-y-6 text-foreground/90 leading-relaxed">
                   <p className="text-lg">
-                    "My brother was killed in a drive-by shooting. Ever since then, it's been hard to bounce back. It felt like I lost a part of myself—my right-hand person in life. I never imagined something so tragic could happen to someone so young. I've never felt heartbreak like that before.
+                    "My brother was killed in a drive-by shooting. Ever since then, it's been hard to bounce back. It felt like I lost a part of myself, my right-hand person in life. I never imagined something so tragic could happen to someone so young. I've never felt heartbreak like that before.
                   </p>
                   
                   <p className="text-lg">
@@ -62,7 +62,7 @@ const Testimonies = () => {
                 
                 <div className="space-y-6 text-foreground/90 leading-relaxed">
                   <p className="text-lg">
-                    "When I was younger, I knew a man in the city who gave out dogs to people in the neighborhood. He gave our family one. One night, I heard a gunshot outside. My dad was out there walking our dog. He saw the man—the one who gave out the dogs—bleeding on the ground. My dad rushed him to the ER, but he didn't make it. I'll never forget that."
+                    "When I was younger, I knew a man in the city who gave out dogs to people in the neighborhood. He gave our family one. One night, I heard a gunshot outside. My dad was out there walking our dog. He saw the man, the one who gave out the dogs, bleeding on the ground. My dad rushed him to the ER, but he didn't make it. I'll never forget that."
                   </p>
                 </div>
               </Card>
@@ -90,7 +90,7 @@ const Testimonies = () => {
 
             <div className="mt-12 text-center p-8 bg-secondary/50 rounded-lg">
               <p className="text-lg text-foreground/80 italic">
-                We share these stories not to shock, but to humanize—to remind everyone that behind every statistic is a person, a family, and a dream interrupted.
+                We share these stories not to shock, but to humanize. We want to remind everyone that behind every statistic is a person, a family, and a dream interrupted.
               </p>
             </div>
           </div>
