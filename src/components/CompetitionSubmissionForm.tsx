@@ -108,7 +108,7 @@ const CompetitionSubmissionForm = () => {
       setIsSubmitted(true);
       toast({
         title: "Submission received!",
-        description: "Thank you for your competition entry. Check your email for confirmation.",
+        description: "Thank you for your competition entry.",
       });
     } catch (error) {
       console.error("Submission error:", error);
