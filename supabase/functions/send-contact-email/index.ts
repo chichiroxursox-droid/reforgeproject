@@ -1,7 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { Resend } from "https://esm.sh/resend@2.0.0";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -17,6 +14,31 @@ interface SubmissionRequest {
   title: string;
 }
 
+async function sendEmail(to: string[], subject: string, html: string) {
+  const resendApiKey = Deno.env.get("RESEND_API_KEY");
+  
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${resendApiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "Reforge Project <onboarding@resend.dev>",
+      to,
+      subject,
+      html,
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Failed to send email: ${error}`);
+  }
+
+  return response.json();
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -30,11 +52,10 @@ const handler = async (req: Request): Promise<Response> => {
     const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
 
     // Send confirmation to the submitter
-    const confirmationResponse = await resend.emails.send({
-      from: "Reforge Project <onboarding@resend.dev>",
-      to: [email],
-      subject: "Competition Submission Received - Reforge Project",
-      html: `
+    const confirmationResponse = await sendEmail(
+      [email],
+      "Competition Submission Received - Reforge Project",
+      `
         <h1>Thank you for your submission, ${name}!</h1>
         <p>We have received your entry for the <strong>Reforge Youth Design & Art Competition</strong>.</p>
         <h3>Submission Details:</h3>
@@ -47,17 +68,16 @@ const handler = async (req: Request): Promise<Response> => {
         <p>We'll review your submission and notify you soon if you've been selected as a finalist.</p>
         <p>Best of luck!</p>
         <p>— The Reforge Project Team</p>
-      `,
-    });
+      `
+    );
 
     console.log("Confirmation email sent:", confirmationResponse);
 
     // Send notification to the organization
-    const notificationResponse = await resend.emails.send({
-      from: "Reforge Project <onboarding@resend.dev>",
-      to: ["thereforgeprojectsla@gmail.com"],
-      subject: `New Competition Submission: ${title}`,
-      html: `
+    const notificationResponse = await sendEmail(
+      ["thereforgeprojectsla@gmail.com"],
+      `New Competition Submission: ${title}`,
+      `
         <h2>New Competition Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -65,8 +85,8 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Grade:</strong> ${grade}</p>
         <p><strong>Category:</strong> ${categoryName}</p>
         <p><strong>Project Title:</strong> ${title}</p>
-      `,
-    });
+      `
+    );
 
     console.log("Notification email sent:", notificationResponse);
 
