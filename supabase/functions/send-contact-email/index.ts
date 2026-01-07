@@ -18,11 +18,26 @@ interface SubmissionRequest {
   fileName: string | null;
 }
 
+function getMimeType(fileName: string): string {
+  const ext = fileName.split('.').pop()?.toLowerCase();
+  const mimeTypes: Record<string, string> = {
+    'pdf': 'application/pdf',
+    'png': 'image/png',
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'gif': 'image/gif',
+    'webp': 'image/webp',
+    'mp4': 'video/mp4',
+    'mov': 'video/quicktime',
+  };
+  return mimeTypes[ext || ''] || 'application/octet-stream';
+}
+
 async function sendEmailWithAttachment(
   to: string[],
   subject: string,
   html: string,
-  attachments?: { filename: string; content: string }[]
+  attachments?: { filename: string; content: string; type: string }[]
 ) {
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
@@ -78,7 +93,7 @@ const handler = async (req: Request): Promise<Response> => {
     const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
 
     // Prepare attachments if file exists
-    let attachments: { filename: string; content: string }[] = [];
+    let attachments: { filename: string; content: string; type: string }[] = [];
 
     if (fileUrl && fileName) {
       try {
@@ -93,6 +108,7 @@ const handler = async (req: Request): Promise<Response> => {
           attachments.push({
             filename: fileName,
             content: base64,
+            type: getMimeType(fileName),
           });
           console.log("File attached successfully:", fileName);
         } else {
