@@ -84,40 +84,19 @@ const handler = async (req: Request): Promise<Response> => {
       try {
         console.log("Fetching file from:", fileUrl);
         
-        // Download file directly via fetch
-        const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-        const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-        
-        // Extract file path - handle both public and regular URLs
-        let filePath = "";
-        if (fileUrl.includes("/object/public/competition-submissions/")) {
-          filePath = fileUrl.split("/object/public/competition-submissions/")[1];
-        } else if (fileUrl.includes("/competition-submissions/")) {
-          filePath = fileUrl.split("/competition-submissions/")[1];
-        }
-        
-        if (filePath) {
-          // Use authenticated endpoint for private bucket
-          const downloadUrl = `${supabaseUrl}/storage/v1/object/authenticated/competition-submissions/${filePath}`;
-          console.log("Download URL:", downloadUrl);
-          
-          const fileResponse = await fetch(downloadUrl, {
-            headers: {
-              Authorization: `Bearer ${supabaseServiceKey}`,
-            },
-          });
+        // The bucket is public, so we can fetch directly from the public URL
+        const fileResponse = await fetch(fileUrl);
 
-          if (fileResponse.ok) {
-            const arrayBuffer = await fileResponse.arrayBuffer();
-            const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-            attachments.push({
-              filename: fileName,
-              content: base64,
-            });
-            console.log("File attached successfully:", fileName);
-          } else {
-            console.error("Failed to download file:", fileResponse.status, await fileResponse.text());
-          }
+        if (fileResponse.ok) {
+          const arrayBuffer = await fileResponse.arrayBuffer();
+          const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+          attachments.push({
+            filename: fileName,
+            content: base64,
+          });
+          console.log("File attached successfully:", fileName);
+        } else {
+          console.error("Failed to download file:", fileResponse.status, await fileResponse.text());
         }
       } catch (fileError) {
         console.error("Error processing file attachment:", fileError);
