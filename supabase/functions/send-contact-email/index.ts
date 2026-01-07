@@ -97,8 +97,8 @@ const handler = async (req: Request): Promise<Response> => {
         }
         
         if (filePath) {
-          // Use authenticated endpoint (bucket is private)
-          const downloadUrl = `${supabaseUrl}/storage/v1/object/competition-submissions/${filePath}`;
+          // Use authenticated endpoint for private bucket
+          const downloadUrl = `${supabaseUrl}/storage/v1/object/authenticated/competition-submissions/${filePath}`;
           console.log("Download URL:", downloadUrl);
           
           const fileResponse = await fetch(downloadUrl, {
