@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { Palette, ArrowRight } from "lucide-react";
 import phillyHero from "@/assets/philly-hero.jpg";
 import studentsCollaboration from "@/assets/students-collaboration.jpg";
 import gunTransformation from "@/assets/gun-transformation.jpg";
@@ -52,14 +54,24 @@ const WhoWeAre = () => {
               <p>That's why we started The Reforge Project. In partnership with Humanium Metal and RAWTools Philly, we're working to raise awareness, remove illegal guns from Philadelphia, and transform them into art, products, and symbols of peace created by students. We're using design, collaboration, and creativity to spark real change—and to show that peace can be built by young people who refuse to accept violence as normal.</p>
             </div>
 
-            <div className="my-16">
-              
-            </div>
-
-            <div className="my-16">
-              
-              
-            </div>
+            {/* Competition CTA */}
+            <Link 
+              to="/whats-next#submit-entry" 
+              className="group flex items-center gap-4 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:shadow-lg mb-12"
+            >
+              <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                <Palette className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
+                  🎨 Youth Design & Art Competition Now Open!
+                </h4>
+                <p className="text-sm text-foreground/70">
+                  Submit your art or engineering design to help forge peace. Click here to enter!
+                </p>
+              </div>
+              <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
+            </Link>
 
             <div className="mb-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Gun Violence in Philadelphia – By the Numbers</h3>
