@@ -44,7 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
           <li><strong>School:</strong> ${school}</li>
           <li><strong>Grade:</strong> ${grade}</li>
         </ul>
-        <p>We'll review your submission and notify you within two weeks if you've been selected as a finalist.</p>
+        <p>We'll review your submission and notify you soon if you've been selected as a finalist.</p>
         <p>Best of luck!</p>
         <p>— The Reforge Project Team</p>
       `,
