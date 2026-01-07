@@ -89,7 +89,7 @@ const CompetitionSubmissionForm = () => {
         throw insertError;
       }
 
-      // Send confirmation email
+      // Send notification email to Reforge team
       await supabase.functions.invoke("send-contact-email", {
         body: {
           name: formData.name,
@@ -98,6 +98,10 @@ const CompetitionSubmissionForm = () => {
           grade: formData.grade,
           category: formData.category,
           title: formData.title,
+          description: formData.description,
+          statement: formData.statement,
+          fileUrl: fileUrl,
+          fileName: fileName,
         },
       });
 
