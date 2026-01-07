@@ -12,23 +12,38 @@ interface SubmissionRequest {
   grade: string;
   category: string;
   title: string;
+  description: string;
+  statement: string;
+  fileUrl: string | null;
+  fileName: string | null;
 }
 
-async function sendEmail(to: string[], subject: string, html: string) {
+async function sendEmailWithAttachment(
+  to: string[],
+  subject: string,
+  html: string,
+  attachments?: { filename: string; content: string }[]
+) {
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
-  
+
+  const body: Record<string, unknown> = {
+    from: "Reforge Project <onboarding@resend.dev>",
+    to,
+    subject,
+    html,
+  };
+
+  if (attachments && attachments.length > 0) {
+    body.attachments = attachments;
+  }
+
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${resendApiKey}`,
+      Authorization: `Bearer ${resendApiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      from: "Reforge Project <onboarding@resend.dev>",
-      to,
-      subject,
-      html,
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!response.ok) {
@@ -45,36 +60,66 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, school, grade, category, title }: SubmissionRequest = await req.json();
+    const {
+      name,
+      email,
+      school,
+      grade,
+      category,
+      title,
+      description,
+      statement,
+      fileUrl,
+      fileName,
+    }: SubmissionRequest = await req.json();
 
-    console.log("Sending submission confirmation to:", name, email);
+    console.log("Processing submission from:", name, email);
 
     const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
 
-    // Send confirmation to the submitter
-    const confirmationResponse = await sendEmail(
-      [email],
-      "Competition Submission Received - Reforge Project",
-      `
-        <h1>Thank you for your submission, ${name}!</h1>
-        <p>We have received your entry for the <strong>Reforge Youth Design & Art Competition</strong>.</p>
-        <h3>Submission Details:</h3>
-        <ul>
-          <li><strong>Category:</strong> ${categoryName}</li>
-          <li><strong>Project Title:</strong> ${title}</li>
-          <li><strong>School:</strong> ${school}</li>
-          <li><strong>Grade:</strong> ${grade}</li>
-        </ul>
-        <p>We'll review your submission and notify you soon if you've been selected as a finalist.</p>
-        <p>Best of luck!</p>
-        <p>— The Reforge Project Team</p>
-      `
-    );
+    // Prepare attachments if file exists
+    let attachments: { filename: string; content: string }[] = [];
 
-    console.log("Confirmation email sent:", confirmationResponse);
+    if (fileUrl && fileName) {
+      try {
+        console.log("Fetching file from:", fileUrl);
+        
+        // Download file directly via fetch
+        const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+        const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+        
+        // Extract file path from URL
+        const urlParts = fileUrl.split("/competition-submissions/");
+        if (urlParts.length > 1) {
+          const filePath = urlParts[1];
+          const downloadUrl = `${supabaseUrl}/storage/v1/object/competition-submissions/${filePath}`;
+          
+          const fileResponse = await fetch(downloadUrl, {
+            headers: {
+              Authorization: `Bearer ${supabaseServiceKey}`,
+            },
+          });
 
-    // Send notification to the organization
-    const notificationResponse = await sendEmail(
+          if (fileResponse.ok) {
+            const arrayBuffer = await fileResponse.arrayBuffer();
+            const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+            attachments.push({
+              filename: fileName,
+              content: base64,
+            });
+            console.log("File attached successfully:", fileName);
+          } else {
+            console.error("Failed to download file:", fileResponse.status);
+          }
+        }
+      } catch (fileError) {
+        console.error("Error processing file attachment:", fileError);
+        // Continue without attachment if there's an error
+      }
+    }
+
+    // Send notification to the organization with all submission details
+    const notificationResponse = await sendEmailWithAttachment(
       ["thereforgeprojectsla@gmail.com"],
       `New Competition Submission: ${title}`,
       `
@@ -85,7 +130,15 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Grade:</strong> ${grade}</p>
         <p><strong>Category:</strong> ${categoryName}</p>
         <p><strong>Project Title:</strong> ${title}</p>
-      `
+        <hr />
+        <h3>Project Description:</h3>
+        <p>${description}</p>
+        <hr />
+        <h3>Artist/Designer Statement:</h3>
+        <p>${statement}</p>
+        ${fileName ? `<hr /><p><strong>Attached File:</strong> ${fileName}</p>` : ""}
+      `,
+      attachments
     );
 
     console.log("Notification email sent:", notificationResponse);
@@ -96,13 +149,10 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
