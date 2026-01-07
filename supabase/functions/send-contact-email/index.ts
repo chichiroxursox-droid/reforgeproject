@@ -88,11 +88,18 @@ const handler = async (req: Request): Promise<Response> => {
         const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
         const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
         
-        // Extract file path from URL
-        const urlParts = fileUrl.split("/competition-submissions/");
-        if (urlParts.length > 1) {
-          const filePath = urlParts[1];
+        // Extract file path - handle both public and regular URLs
+        let filePath = "";
+        if (fileUrl.includes("/object/public/competition-submissions/")) {
+          filePath = fileUrl.split("/object/public/competition-submissions/")[1];
+        } else if (fileUrl.includes("/competition-submissions/")) {
+          filePath = fileUrl.split("/competition-submissions/")[1];
+        }
+        
+        if (filePath) {
+          // Use authenticated endpoint (bucket is private)
           const downloadUrl = `${supabaseUrl}/storage/v1/object/competition-submissions/${filePath}`;
+          console.log("Download URL:", downloadUrl);
           
           const fileResponse = await fetch(downloadUrl, {
             headers: {
@@ -109,7 +116,7 @@ const handler = async (req: Request): Promise<Response> => {
             });
             console.log("File attached successfully:", fileName);
           } else {
-            console.error("Failed to download file:", fileResponse.status);
+            console.error("Failed to download file:", fileResponse.status, await fileResponse.text());
           }
         }
       } catch (fileError) {
