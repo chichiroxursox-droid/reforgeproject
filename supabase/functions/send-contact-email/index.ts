@@ -109,7 +109,6 @@ const handler = async (req: Request): Promise<Response> => {
           attachments.push({
             filename: fileName,
             content: base64,
-            type: getMimeType(fileName),
           });
           console.log("File attached successfully:", fileName);
         } else {
