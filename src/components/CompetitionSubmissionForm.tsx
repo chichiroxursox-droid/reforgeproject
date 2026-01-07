@@ -124,7 +124,7 @@ const CompetitionSubmissionForm = () => {
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
         <h3 className="text-2xl font-bold mb-2">Submission Received!</h3>
         <p className="text-foreground/80">
-          Thank you for entering the Reforge Youth Design & Art Competition. We'll review your submission and notify you within two weeks if you've been selected as a finalist.
+          Thank you for entering the Reforge Youth Design & Art Competition. We'll review your submission and notify you soon if you've been selected as a finalist.
         </p>
       </Card>
     );
