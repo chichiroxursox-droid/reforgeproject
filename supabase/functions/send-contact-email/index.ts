@@ -1,9 +1,19 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.89.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
+
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") as string;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
+const SUBMISSIONS_BUCKET = "competition-submissions";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+  auth: { persistSession: false, autoRefreshToken: false },
+});
+
 
 interface SubmissionRequest {
   name: string;
@@ -18,26 +28,15 @@ interface SubmissionRequest {
   fileName: string | null;
 }
 
-function getMimeType(fileName: string): string {
-  const ext = fileName.split('.').pop()?.toLowerCase();
-  const mimeTypes: Record<string, string> = {
-    'pdf': 'application/pdf',
-    'png': 'image/png',
-    'jpg': 'image/jpeg',
-    'jpeg': 'image/jpeg',
-    'gif': 'image/gif',
-    'webp': 'image/webp',
-    'mp4': 'video/mp4',
-    'mov': 'video/quicktime',
-  };
-  return mimeTypes[ext || ''] || 'application/octet-stream';
-}
+type ResendAttachment =
+  | { filename: string; content: string }
+  | { filename: string; path: string; contentId?: string };
 
 async function sendEmailWithAttachment(
   to: string[],
   subject: string,
   html: string,
-  attachments?: { filename: string; content: string; type: string }[]
+  attachments?: ResendAttachment[]
 ) {
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
@@ -69,6 +68,7 @@ async function sendEmailWithAttachment(
   return response.json();
 }
 
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -93,7 +93,8 @@ const handler = async (req: Request): Promise<Response> => {
     const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
 
     // Prepare attachments if file exists
-    let attachments: { filename: string; content: string; type: string }[] = [];
+    // Prefer remote attachments (Resend fetches the URL and embeds it into the email)
+    let attachments: ResendAttachment[] = [];
 
     if (fileUrl && fileName) {
       try {
