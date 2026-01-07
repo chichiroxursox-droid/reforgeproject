@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { encode as base64Encode } from "https://deno.land/std@0.168.0/encoding/base64.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.89.0";
 
 const corsHeaders = {
@@ -31,6 +32,18 @@ interface SubmissionRequest {
 type ResendAttachment =
   | { filename: string; content: string }
   | { filename: string; path: string; contentId?: string };
+
+function extractStorageObjectPath(fileUrl: string, bucket: string): string | null {
+  try {
+    const url = new URL(fileUrl);
+    const parts = url.pathname.split("/").filter(Boolean);
+    const bucketIndex = parts.findIndex((p) => p === bucket);
+    if (bucketIndex === -1 || bucketIndex >= parts.length - 1) return null;
+    return parts.slice(bucketIndex + 1).join("/");
+  } catch {
+    return null;
+  }
+}
 
 async function sendEmailWithAttachment(
   to: string[],
@@ -93,32 +106,65 @@ const handler = async (req: Request): Promise<Response> => {
     const categoryName = category === "art" ? "Art Competition" : "Engineering Design Competition";
 
     // Prepare attachments if file exists
-    // Prefer remote attachments (Resend fetches the URL and embeds it into the email)
     let attachments: ResendAttachment[] = [];
 
     if (fileUrl && fileName) {
       try {
-        console.log("Fetching file from:", fileUrl);
-        
-        // The bucket is public, so we can fetch directly from the public URL
-        const fileResponse = await fetch(fileUrl);
+        const objectPath = extractStorageObjectPath(fileUrl, SUBMISSIONS_BUCKET);
 
-        if (fileResponse.ok) {
-          const arrayBuffer = await fileResponse.arrayBuffer();
-          const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+        if (objectPath) {
+          console.log("Downloading submission file from storage:", objectPath);
+
+          const { data: fileBlob, error: downloadError } = await supabase.storage
+            .from(SUBMISSIONS_BUCKET)
+            .download(objectPath);
+
+          if (downloadError) {
+            throw downloadError;
+          }
+
+          const bytes = new Uint8Array(await fileBlob.arrayBuffer());
+          const base64 = base64Encode(bytes.buffer);
+
           attachments.push({
             filename: fileName,
             content: base64,
           });
-          console.log("File attached successfully:", fileName);
+
+          console.log("Attachment prepared successfully:", fileName);
         } else {
-          console.error("Failed to download file:", fileResponse.status, await fileResponse.text());
+          // Fallback: try direct fetch (e.g., signed URL)
+          console.warn(
+            "Could not extract storage object path from fileUrl; falling back to direct fetch.",
+            fileUrl
+          );
+
+          const fileResponse = await fetch(fileUrl);
+
+          if (!fileResponse.ok) {
+            console.error(
+              "Failed to download file via direct fetch:",
+              fileResponse.status,
+              await fileResponse.text()
+            );
+          } else {
+            const bytes = new Uint8Array(await fileResponse.arrayBuffer());
+            const base64 = base64Encode(bytes.buffer);
+
+            attachments.push({
+              filename: fileName,
+              content: base64,
+            });
+
+            console.log("Attachment prepared successfully via direct fetch:", fileName);
+          }
         }
       } catch (fileError) {
-        console.error("Error processing file attachment:", fileError);
-        // Continue without attachment if there's an error
+        console.error("Error processing file attachment (continuing without attachment):", fileError);
       }
     }
+
+    console.log("Attachment count before sending email:", attachments.length);
 
     // Send notification to the organization with all submission details
     const notificationResponse = await sendEmailWithAttachment(
