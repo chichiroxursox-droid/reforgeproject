@@ -93,6 +93,28 @@ const WhatsNext = () => {
                     <p className="text-foreground/80 mb-4">
                       In partnership with <strong>Humanium Metal Sweden</strong> and <strong>RAWtools Philly</strong>, we are launching two connected competitions: one focused on art and one on engineering design.
                     </p>
+                    
+                    {/* Two-Step Process */}
+                    <div className="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                      <h4 className="font-semibold text-lg mb-3 text-primary">How It Works: A Two-Step Process</h4>
+                      <div className="space-y-3">
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">1</div>
+                          <div>
+                            <p className="font-medium">Submit Your Idea</p>
+                            <p className="text-sm text-foreground/70">Submit a sketch, concept, or prototype of your idea. This is just the first step—you don't need finished materials yet!</p>
+                          </div>
+                        </div>
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">2</div>
+                          <div>
+                            <p className="font-medium">Finalists Build Their Vision</p>
+                            <p className="text-sm text-foreground/70">We will select <strong>20 finalists across both categories</strong> who will receive all the materials they need to bring their idea to life. Finalists will be invited to <strong>RAWtools Philly in Kensington</strong> to create their final pieces, where winners will be judged.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="p-4 bg-primary/5 rounded-lg">
                         <h4 className="font-semibold mb-2">Humanium Metal</h4>
