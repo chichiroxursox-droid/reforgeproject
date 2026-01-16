@@ -116,7 +116,7 @@ const WhatsNext = () => {
                         <h3 className="text-lg font-semibold">Art Competition</h3>
                       </div>
                       <p className="text-sm text-foreground/80">
-                        Create a draft artistic design using Humanium Chalk or propose a sculpture from decommissioned gun parts. Top 20 finalists receive materials to create their final pieces.
+                        Create a draft artistic design using Humanium Chalk or propose an art piece from decommissioned gun parts. Top 20 finalists receive materials to create their final pieces.
                       </p>
                     </Card>
                     <Card className="p-6">
