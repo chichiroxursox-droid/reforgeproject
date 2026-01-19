@@ -43,7 +43,7 @@ const WhatsNext = () => {
                 We're just getting started.
               </p>
               <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-                Our next major goal is to host Philadelphia's first firearm destruction event, in partnership with Humanium Metal and city leaders. The melted metal from that event will be repurposed by students into art and products designed to raise awareness and inspire hope.
+                Our next major goal is to hold our student art competition in partnership with Humanium Metal and RAWtools Philly. Students will create art and designs that transform instruments of violence into symbols of peace.
               </p>
             </div>
 
