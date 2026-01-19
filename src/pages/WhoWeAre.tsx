@@ -46,7 +46,7 @@ const WhoWeAre = () => {
           <div className="container mx-auto max-w-4xl">
             {/* Competition CTA */}
             <Link 
-              to="/whats-next#submit-entry" 
+              to="/competition" 
               className="group flex items-center gap-4 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border-2 border-primary/30 hover:border-primary transition-all duration-300 hover:shadow-lg mb-12"
             >
               <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center">

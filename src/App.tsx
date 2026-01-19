@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WhoWeAre from "./pages/WhoWeAre";
 import WhatWeveDone from "./pages/WhatWeveDone";
 import WhatsNext from "./pages/WhatsNext";
+import Competition from "./pages/Competition";
 import Partners from "./pages/Partners";
 import Testimonies from "./pages/Testimonies";
 import Contact from "./pages/Contact";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<WhoWeAre />} />
           <Route path="/what-weve-done" element={<WhatWeveDone />} />
           <Route path="/whats-next" element={<WhatsNext />} />
+          <Route path="/competition" element={<Competition />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/testimonies" element={<Testimonies />} />
           <Route path="/meet-the-team" element={<MeetTheTeam />} />
