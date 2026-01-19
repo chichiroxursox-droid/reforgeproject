@@ -44,16 +44,6 @@ const WhoWeAre = () => {
       <main className="flex-1">
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Who We Are</h2>
-            
-            <div className="prose prose-lg max-w-none mb-12 text-foreground/90 leading-relaxed space-y-6">
-              <p>
-                We are students from Science Leadership Academy at Beeber in West Philadelphia, a community that has felt the impact of gun violence far too often. It's not something we face every day, but it's a reality that shapes the way we move through our neighborhoods. We love our city, but we also recognize that kids in some parts of Philly grow up with fears that others—just a few miles away in Lower Merion—never have to think about. Every student deserves the basic right to walk home safely, spend time with friends, and grow up without the constant threat of gun violence.
-              </p>
-              
-              <p>That's why we started The Reforge Project. In partnership with Humanium Metal and RAWTools Philly, we're working to raise awareness, remove illegal guns from Philadelphia, and transform them into art, products, and symbols of peace created by students. We're using design, collaboration, and creativity to spark real change—and to show that peace can be built by young people who refuse to accept violence as normal.</p>
-            </div>
-
             {/* Competition CTA */}
             <Link 
               to="/whats-next#submit-entry" 
@@ -72,6 +62,16 @@ const WhoWeAre = () => {
               </div>
               <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Who We Are</h2>
+            
+            <div className="prose prose-lg max-w-none mb-12 text-foreground/90 leading-relaxed space-y-6">
+              <p>
+                We are students from Science Leadership Academy at Beeber in West Philadelphia, a community that has felt the impact of gun violence far too often. It's not something we face every day, but it's a reality that shapes the way we move through our neighborhoods. We love our city, but we also recognize that kids in some parts of Philly grow up with fears that others—just a few miles away in Lower Merion—never have to think about. Every student deserves the basic right to walk home safely, spend time with friends, and grow up without the constant threat of gun violence.
+              </p>
+              
+              <p>That's why we started The Reforge Project. In partnership with Humanium Metal and RAWTools Philly, we're working to raise awareness, remove illegal guns from Philadelphia, and transform them into art, products, and symbols of peace created by students. We're using design, collaboration, and creativity to spark real change—and to show that peace can be built by young people who refuse to accept violence as normal.</p>
+            </div>
 
             <div className="mb-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Gun Violence in Philadelphia – By the Numbers</h3>
