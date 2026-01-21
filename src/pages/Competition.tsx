@@ -68,6 +68,25 @@ const Competition = () => {
                     </div>
                   </div>
 
+                  {/* Important Dates */}
+                  <div className="mb-6 p-4 bg-secondary/50 rounded-lg border border-secondary">
+                    <h4 className="font-semibold text-lg mb-3">Important Dates</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                      <div>
+                        <p className="font-bold text-primary text-lg">March 15, 2026</p>
+                        <p className="text-sm text-foreground/70">Phase 1 Submissions Close</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-primary text-lg">March 20, 2026</p>
+                        <p className="text-sm text-foreground/70">Finalists Notified</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-primary text-lg">May 22, 2026</p>
+                        <p className="text-sm text-foreground/70">Final Event at RAWtools Philly</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 bg-primary/5 rounded-lg">
                       <h4 className="font-semibold mb-2 text-base md:text-lg">Humanium Metal</h4>

@@ -136,6 +136,12 @@ const CompetitionSubmissionForm = () => {
 
   return (
     <Card className="p-6">
+      {/* Important Dates Banner */}
+      <div className="mb-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
+        <p className="text-center font-semibold text-primary">
+          📅 Phase 1 submissions close <strong>March 15, 2026</strong> • Finalists notified by <strong>March 20, 2026</strong> • Final event <strong>May 22, 2026</strong>
+        </p>
+      </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
