@@ -9,15 +9,16 @@ const Competition = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       <main className="flex-1">
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-5xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Youth Design & Art Competition</h1>
             <p className="text-center text-foreground/80 mb-8 max-w-2xl mx-auto text-lg">
-              Engage high school students in using creativity to raise awareness about gun violence and explore how instruments of harm can be transformed into symbols of peace.
+              Engage high school students in using creativity to raise awareness about gun violence and explore how
+              instruments of harm can be transformed into symbols of peace.
             </p>
-            
+
             <Tabs defaultValue="overview" className="w-full">
               <TabsList className="grid w-full grid-cols-4 mb-6">
                 <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -25,29 +26,43 @@ const Competition = () => {
                 <TabsTrigger value="prizes">Prizes</TabsTrigger>
                 <TabsTrigger value="submit">Submit Entry</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="overview" className="space-y-4">
                 <Card className="p-6">
                   <p className="text-foreground/80 mb-4 text-base md:text-lg">
-                    In partnership with <strong>Humanium Metal Sweden</strong> and <strong>RAWtools Philly</strong>, we are launching two connected competitions: one focused on art and one on engineering design.
+                    In partnership with <strong>Humanium Metal Sweden</strong> and <strong>RAWtools Philly</strong>, we
+                    are launching two connected competitions: one focused on art and one on engineering design.
                   </p>
-                  
+
                   {/* Two-Step Process */}
                   <div className="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
                     <h4 className="font-semibold text-lg mb-3 text-primary">How It Works: A Two-Step Process</h4>
                     <div className="space-y-3">
                       <div className="flex gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
+                          1
+                        </div>
                         <div>
                           <p className="font-medium text-base md:text-lg">Submit Your Idea</p>
-                          <p className="text-sm md:text-base text-foreground/70">Entering is easy. Submit a sketch, concept, or photo of your prototype of your idea with a short paragraph explaining your design. This is just the first step, you don't need anything finished yet!</p>
+                          <p className="text-sm md:text-base text-foreground/70">
+                            Entering is easy. Submit a sketch, concept, or photo of your prototype of your idea with a
+                            short paragraph explaining your design. This is just the first step, you don't need anything
+                            finished yet!
+                          </p>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
+                          2
+                        </div>
                         <div>
                           <p className="font-medium text-base md:text-lg">Finalists Build Their Vision</p>
-                          <p className="text-sm md:text-base text-foreground/70">We will select <strong>20 finalists across both categories</strong> who will receive all the materials they need to bring their idea to life. Finalists will be invited to <strong>RAWtools Philly in Kensington</strong> to display their final pieces, where winners will be judged.</p>
+                          <p className="text-sm md:text-base text-foreground/70">
+                            We will select <strong>20 finalists across both categories</strong> who will receive all the
+                            materials they need to bring their idea to life. Finalists will be invited to{" "}
+                            <strong>RAWtools Philly in Kensington</strong> to display their final pieces, where winners
+                            will be judged.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -56,16 +71,21 @@ const Competition = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 bg-primary/5 rounded-lg">
                       <h4 className="font-semibold mb-2 text-base md:text-lg">Humanium Metal</h4>
-                      <p className="text-sm md:text-base text-foreground/70">Transforms illegal firearms into metal powder for 3D printing and Humanium Chalk for artists.</p>
+                      <p className="text-sm md:text-base text-foreground/70">
+                        Transforms illegal firearms into metal powder for 3D printing and Humanium Chalk for artists.
+                      </p>
                     </div>
                     <div className="p-4 bg-primary/5 rounded-lg">
                       <h4 className="font-semibold mb-2 text-base md:text-lg">RAWtools Philly</h4>
-                      <p className="text-sm md:text-base text-foreground/70">Uses traditional tools to reshape decommissioned firearms into sculptures, jewelry, and functional objects.</p>
+                      <p className="text-sm md:text-base text-foreground/70">
+                        Uses traditional tools to reshape decommissioned firearms into sculptures, jewelry, and
+                        functional objects.
+                      </p>
                     </div>
                   </div>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="categories" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Card className="p-6">
@@ -76,7 +96,8 @@ const Competition = () => {
                       <h3 className="text-lg md:text-xl font-semibold">Art Competition</h3>
                     </div>
                     <p className="text-sm md:text-base text-foreground/80">
-                      Create a draft artistic design using Humanium Chalk or propose an art piece from decommissioned gun parts. Top 20 finalists receive materials to create their final pieces.
+                      Create a draft artistic design using Humanium Chalk or propose an art piece from decommissioned
+                      gun parts. Top 20 finalists receive materials to create their final pieces.
                     </p>
                   </Card>
                   <Card className="p-6">
@@ -87,12 +108,13 @@ const Competition = () => {
                       <h3 className="text-lg md:text-xl font-semibold">Engineering Design</h3>
                     </div>
                     <p className="text-sm md:text-base text-foreground/80">
-                      Create a prototype, CAD model, or detailed drawing of an object that could be fabricated using Humanium Metal or RAWtools processes.
+                      Create a prototype, CAD model, or detailed drawing of an object that could be fabricated using
+                      Humanium Metal or RAWtools processes.
                     </p>
                   </Card>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="prizes" className="space-y-4">
                 <Card className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
@@ -113,11 +135,12 @@ const Competition = () => {
                     </div>
                   </div>
                   <p className="text-center text-base md:text-lg text-foreground/80 mt-6">
-                    All finalists receive a certificate of recognition and Reforge Project swag.
+                    All 20 finalists receive a certificate of recognition and Reforge Project swag. Each category has a
+                    seperate prize pool (same amount)
                   </p>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="submit" className="space-y-4">
                 <CompetitionSubmissionForm />
               </TabsContent>
