@@ -40,7 +40,7 @@ const Competition = () => {
                         <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">1</div>
                         <div>
                           <p className="font-medium text-base md:text-lg">Submit Your Idea</p>
-                          <p className="text-sm md:text-base text-foreground/70">Entrance is easy. Submit a sketch, concept, or prototype of your idea with a short paragraph explaining your design. This is just the first step, you don't need anything finished yet!</p>
+                          <p className="text-sm md:text-base text-foreground/70">Entering is easy. Submit a sketch, concept, or photo of your prototype of your idea with a short paragraph explaining your design. This is just the first step, you don't need anything finished yet!</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
