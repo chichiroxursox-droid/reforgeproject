@@ -5,6 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import forgedSteel from "@/assets/forged-steel.jpg";
 import microphonePeace from "@/assets/microphone-peace.jpg";
 import microphoneEvent from "@/assets/microphone-event.jpg";
+import ethanUnPresentation from "@/assets/ethan-un-presentation.jpeg";
 
 const WhatWeveDone = () => {
   const achievements = [
@@ -64,6 +65,18 @@ const WhatWeveDone = () => {
                   Amplifying voices for change at community events
                 </p>
               </div>
+            </div>
+
+            {/* UN Presentation Image */}
+            <div className="mb-12">
+              <img 
+                src={ethanUnPresentation} 
+                alt="Ethan Hauger presenting the Microphone for Peace at the United Nations" 
+                className="w-full rounded-lg shadow-lg"
+              />
+              <p className="text-center mt-4 text-foreground/70 italic">
+                Ethan Hauger presenting the Microphone for Peace at the United Nations
+              </p>
             </div>
 
             <Card className="p-8 bg-gradient-to-br from-turquoise/5 to-turquoise/10 border-2 border-turquoise/20">
