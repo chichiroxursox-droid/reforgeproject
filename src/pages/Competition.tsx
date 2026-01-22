@@ -91,7 +91,7 @@ const Competition = () => {
                   <div className="mb-6 p-4 bg-turquoise/10 rounded-lg border border-turquoise/20">
                     <h4 className="font-semibold text-lg mb-2">Eligibility</h4>
                     <p className="text-sm md:text-base text-foreground/80">
-                      This competition is open to <strong>Philadelphia high school students only</strong>. Participants must be currently enrolled in a Philadelphia-area high school to be eligible.
+                      This competition is open to <strong>Philadelphia middle school and high school students only</strong>. Participants must be currently enrolled in a Philadelphia-area school to be eligible.
                     </p>
                   </div>
 
