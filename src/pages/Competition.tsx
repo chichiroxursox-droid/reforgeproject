@@ -124,26 +124,9 @@ const Competition = () => {
                       </div>
                       <h3 className="text-lg md:text-xl font-semibold">Art Competition</h3>
                     </div>
-                    <p className="text-sm md:text-base text-foreground/80 mb-4">
+                    <p className="text-sm md:text-base text-foreground/80">
                       Create a draft artistic design that incorporates Humanium Chalk or propose an art piece from decommissioned
                       gun parts. Your entire piece doesn't have to be made with Humanium Chalk—ideally, just incorporate some into your work. Top 20 finalists receive materials to create their final pieces.
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <img src={humaniumMic} alt="Microphone for Peace made with Humanium Metal" className="w-full rounded-lg shadow-sm" />
-                        <p className="text-xs text-foreground/60 mt-2 italic">The Microphone for Peace — designed using Humanium Metal as a symbol of transforming violence into voice.</p>
-                      </div>
-                      <div>
-                        <img src={humaniumChalkBird} alt="Bird artwork created with Humanium Chalk" className="w-full rounded-lg shadow-sm" />
-                        <p className="text-xs text-foreground/60 mt-2 italic">A bird drawn using Humanium Chalk — chalk made from melted-down illegal firearms.</p>
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-foreground/70">
-                      For more inspiration, visit{" "}
-                      <a href="https://www.rawtoolsinc.org" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">RAWtools</a>{" "}or{" "}
-                      <a href="https://www.humaniumetal.com" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Humanium Metal</a>.
                     </p>
                   </Card>
                   <Card className="p-6">
@@ -159,6 +142,25 @@ const Competition = () => {
                     </p>
                   </Card>
                 </div>
+
+                <Card className="p-6">
+                  <h3 className="text-lg md:text-xl font-semibold mb-4">Inspiration & Examples</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <img src={humaniumMic} alt="Microphone for Peace made with Humanium Metal" className="w-full rounded-lg shadow-sm" />
+                      <p className="text-xs text-foreground/60 mt-2 italic">The Microphone for Peace — designed using Humanium Metal as a symbol of transforming violence into voice.</p>
+                    </div>
+                    <div>
+                      <img src={humaniumChalkBird} alt="Bird artwork created with Humanium Chalk" className="w-full rounded-lg shadow-sm" />
+                      <p className="text-xs text-foreground/60 mt-2 italic">A bird drawn using Humanium Chalk — chalk made from melted-down illegal firearms.</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground/70">
+                    For more inspiration, visit{" "}
+                    <a href="https://www.rawtoolsinc.org" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">RAWtools</a>{" "}or{" "}
+                    <a href="https://www.humaniumetal.com" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Humanium Metal</a>.
+                  </p>
+                </Card>
               </TabsContent>
 
               <TabsContent value="prizes" className="space-y-4">
