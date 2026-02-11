@@ -157,8 +157,8 @@ const Competition = () => {
                   </div>
                   <p className="text-sm text-foreground/70">
                     For more inspiration, visit{" "}
-                    <a href="https://www.rawtoolsinc.org" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">RAWtools</a>{" "}or{" "}
-                    <a href="https://www.humaniumetal.com" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Humanium Metal</a>.
+                    <a href="https://rawtools.org/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">RAWtools</a>{" "}or{" "}
+                    <a href="https://humanium-metal.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Humanium Metal</a>.
                   </p>
                 </Card>
               </TabsContent>
