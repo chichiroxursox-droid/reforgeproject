@@ -79,7 +79,7 @@ const Competition = () => {
                         <p className="text-sm text-foreground/70">Phase 1 Submissions Close</p>
                       </div>
                       <div>
-                        <p className="font-bold text-primary text-lg">March 20, 2026</p>
+                        <p className="font-bold text-primary text-lg">May 5, 2026</p>
                         <p className="text-sm text-foreground/70">Finalists Notified</p>
                       </div>
                       <div>
