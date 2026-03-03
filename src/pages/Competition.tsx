@@ -75,7 +75,7 @@ const Competition = () => {
                     <h4 className="font-semibold text-lg mb-3">Important Dates</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                       <div>
-                        <p className="font-bold text-primary text-lg">March 15, 2026</p>
+                        <p className="font-bold text-primary text-lg">March 30, 2026</p>
                         <p className="text-sm text-foreground/70">Phase 1 Submissions Close</p>
                       </div>
                       <div>
